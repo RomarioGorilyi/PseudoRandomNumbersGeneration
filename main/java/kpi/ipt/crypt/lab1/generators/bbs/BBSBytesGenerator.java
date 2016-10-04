@@ -11,8 +11,8 @@ public class BBSBytesGenerator extends BBSGenerator {
     }
 
     @Override
-    public void generateBit() {
+    public long generateRandomBit() {
         setR(getR().modPow(new BigInteger("2"), getP().multiply(getQ())));
-        addToRandomNumbers(getR().mod(new BigInteger("256")).intValue());
+        return getR().mod(new BigInteger("256")).intValue();
     }
 }

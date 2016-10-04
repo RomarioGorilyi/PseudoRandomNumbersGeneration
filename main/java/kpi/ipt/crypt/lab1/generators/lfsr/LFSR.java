@@ -1,17 +1,20 @@
-package main.java.kpi.ipt.crypt.lab1.util;
+package main.java.kpi.ipt.crypt.lab1.generators.lfsr;
+
+import main.java.kpi.ipt.crypt.lab1.generators.BitGenerator;
 
 import java.util.*;
 
 /**
+ * Linear feedback shift register.
  * Created by Roman Horilyi on 26.09.2016.
  */
-public class LinearFeedbackShiftRegister {
+public class LFSR extends BitGenerator {
     private int length;
     private ArrayList<Integer> engagedElements;
     private LinkedList<Integer> state;
     private ArrayList<Integer> outputGeneratedBits;
 
-    public LinearFeedbackShiftRegister(int length, int... orderNumbers) {
+    public LFSR(int length, int... orderNumbers) {
         this.length = length;
         engagedElements = new ArrayList<>();
         state = new LinkedList<>();
@@ -21,22 +24,29 @@ public class LinearFeedbackShiftRegister {
         setInitialStateRandomly();
     }
 
-    public void setEngagedElements(int... orderNumbers) {
+    private void setEngagedElements(int... orderNumbers) {
         for (int orderNumber : orderNumbers) {
             engagedElements.add(orderNumber);
         }
     }
 
-    public void setInitialStateRandomly() {
+    private void setInitialStateRandomly() {
         Random random = new Random();
         for (int i = 0; i < length; i++) {
             state.add(random.nextInt(2));
         }
     }
 
-    public void makeShift() {
+    @Override
+    public long generateRandomBit() {
+        return makeShift();
+    }
+
+    public long makeShift() {
         generateNewBit();
-        getOutputBit();
+        int outputBit = state.removeLast();
+        outputGeneratedBits.add(outputBit);
+        return outputBit;
     }
 
     private void generateNewBit() {
@@ -45,26 +55,6 @@ public class LinearFeedbackShiftRegister {
             valueOfNewBit += state.get(length - 1 - elementNumber);
         }
         state.addFirst(valueOfNewBit % 2);
-    }
-
-    private void getOutputBit() {
-        outputGeneratedBits.add(state.removeLast());
-    }
-
-    public void generateRandomBits(int quantity) {
-        for (int i = 0; i < quantity; i++) {
-            makeShift();
-        }
-    }
-
-    public ArrayList<Integer> getOutputBits() {
-        return outputGeneratedBits;
-    }
-
-    public void printOutputBits() {
-        for (int random : getOutputBits()) {
-            System.out.print(random + " ");
-        }
     }
 
     public int getLastOutputBit() {

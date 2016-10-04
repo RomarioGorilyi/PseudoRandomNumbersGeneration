@@ -11,16 +11,18 @@ public class LehmerHigh extends LehmerGenerator {
     }
 
     /**
-     * Get arrayList of numbers that contain only 8 MSBs (the most significant bits) of generated random numbers
-     * from the <code>generatedRandomNumbers</code> arrayList.
-     * @return arrayList of random number's MSBs
+     * Generate random numbers and then get only 8 MSBs (the most significant bits) of every number
+     * and add them to <code>generatedRandomNumbers</code> list.
+     * @param quantity number of random values that have to be generated
      */
     @Override
-    public ArrayList<Long> getRandomNumbers() {
-        ArrayList<Long> resultList = new ArrayList<>();
-        for (int i = 0; i < super.getRandomNumbers().size(); i++) {
-            resultList.add(super.getRandomNumbers().get(i) >> 24);
+    public void generateRandomNumbers(int quantity) {
+        super.generateRandomNumbers(quantity);
+        ArrayList<Long> randoms = getGeneratedRandomNumbers();
+        int size = randoms.size();
+        for (int i = 0; i < size; i++) {
+            randoms.set(i, randoms.get(i) >> 24);
         }
-        return resultList;
+        setGeneratedRandomNumbers(randoms);
     }
 }

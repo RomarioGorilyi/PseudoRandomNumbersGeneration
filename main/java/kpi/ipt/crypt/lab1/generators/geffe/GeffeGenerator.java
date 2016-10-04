@@ -1,52 +1,33 @@
 package main.java.kpi.ipt.crypt.lab1.generators.geffe;
 
-import main.java.kpi.ipt.crypt.lab1.util.LinearFeedbackShiftRegister;
-
-import java.util.ArrayList;
+import main.java.kpi.ipt.crypt.lab1.generators.BitGenerator;
+import main.java.kpi.ipt.crypt.lab1.generators.lfsr.LFSR;
 
 /**
  * Created by Roman Horilyi on 26.09.2016.
  */
-public class GeffeGenerator {
-    private LinearFeedbackShiftRegister l11;
-    private LinearFeedbackShiftRegister l9;
-    private LinearFeedbackShiftRegister l10;
-    private ArrayList<Integer> outputGeneratedBits;
+public class GeffeGenerator extends BitGenerator{
+    private LFSR l11;
+    private LFSR l9;
+    private LFSR l10;
 
     public GeffeGenerator() {
-        l11 = new LinearFeedbackShiftRegister(11, 0, 2);
-        l9 = new LinearFeedbackShiftRegister(9, 0, 1, 3, 4);
-        l10 = new LinearFeedbackShiftRegister(10, 0, 3);
-        outputGeneratedBits = new ArrayList<>();
+        l11 = new LFSR(11, 0, 2);
+        l9 = new LFSR(9, 0, 1, 3, 4);
+        l10 = new LFSR(10, 0, 3);
     }
 
-    public void generateBit() {
-        l11.generateRandomBits(1);
+    @Override
+    public long generateRandomBit() {
+        l11.generateRandomBit();
         int x = l11.getLastOutputBit();
 
-        l9.generateRandomBits(1);
+        l9.generateRandomBit();
         int y = l9.getLastOutputBit();
 
-        l10.generateRandomBits(1);
+        l10.generateRandomBit();
         int s = l10.getLastOutputBit();
 
-        int result = (s * x + (1 + s) * y) % 2;
-        outputGeneratedBits.add(result);
-    }
-
-    public void generateRandomBits(int quantity) {
-        for (int i = 0; i < quantity; i++) {
-            generateBit();
-        }
-    }
-
-    public ArrayList<Integer> getOutputBits() {
-        return outputGeneratedBits;
-    }
-
-    public void printOutputBits() {
-        for (int random : getOutputBits()) {
-            System.out.print(random + " ");
-        }
+        return (s * x + (1 + s) * y) % 2;
     }
 }

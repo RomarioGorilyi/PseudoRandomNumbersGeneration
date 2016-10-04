@@ -11,10 +11,11 @@ public class BMBytesGenerator extends BMGenerator {
     }
 
     @Override
-    public void generateBit() {
+    public long generateRandomBit() {
         BigInteger result = (getT().multiply(new BigInteger("256")))
                 .divide(getP().subtract(new BigInteger("1")));
-        addToRandomNumbers(result.intValue());
         setT();
+
+        return result.intValue();
     }
 }
