@@ -24,18 +24,18 @@ public class WolframGenerator extends BitGenerator {
     @Override
     public long generateRandomBit() {
         long randomBit = r & 1;
-        r = (rotateIntBitsLeftwards(r) ^ (r | rotateIntBitsRightwards(r)));
+        r = (rotateBitsOfIntegerLeftwards(r) ^ (r | rotateBitsOfIntegerRightwards(r)));
         return randomBit;
     }
 
-    private long rotateIntBitsLeftwards(long number) {
+    private long rotateBitsOfIntegerLeftwards(long number) {
         long rightmostBit = (number >> 31) & 1;
         long result = (number << 1) | rightmostBit;
 
         return result;
     }
 
-    private long rotateIntBitsRightwards(long number) {
+    private long rotateBitsOfIntegerRightwards(long number) {
         long leftmostBit = (number & 1) << 31;
         long result = leftmostBit | (number >> 1);
 

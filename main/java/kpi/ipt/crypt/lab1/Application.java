@@ -2,8 +2,8 @@ package main.java.kpi.ipt.crypt.lab1;
 
 import main.java.kpi.ipt.crypt.lab1.generators.bbs.BBSBytesGenerator;
 import main.java.kpi.ipt.crypt.lab1.generators.bbs.BBSGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.blumMicali.BMBytesGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.blumMicali.BMGenerator;
+import main.java.kpi.ipt.crypt.lab1.generators.bm.BMBytesGenerator;
+import main.java.kpi.ipt.crypt.lab1.generators.bm.BMGenerator;
 import main.java.kpi.ipt.crypt.lab1.generators.geffe.GeffeGenerator;
 import main.java.kpi.ipt.crypt.lab1.generators.javaEmbedded.JavaEmbeddedGenerator;
 import main.java.kpi.ipt.crypt.lab1.generators.lfsr.L20;

@@ -18,6 +18,9 @@ public class LibrarianGenerator extends StreamingGenerator {
         this.filePath = filePath;
     }
 
+    /**
+     * Generates random numbers converting all text into bytes.
+     */
     public void generateRandomNumbers() {
         ArrayList<Integer> randoms = convertTextIntoBytes();
         randoms.forEach(this::addToGeneratedRandomNumbers);

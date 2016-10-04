@@ -6,6 +6,7 @@ import java.math.BigInteger;
 import java.util.Random;
 
 /**
+ * Blum-Blum-Shub generator.
  * Created by Roman Horilyi on 27.09.2016.
  */
 public class BBSGenerator extends BitGenerator {

@@ -14,6 +14,11 @@ public class LFSR extends BitGenerator {
     private LinkedList<Integer> state;
     private ArrayList<Integer> outputGeneratedBits;
 
+    /**
+     * Constructs a new LFSR with the specified length and the specified set of taps (states that influence the input).
+     * @param length length of the LFSR (number of bits in the LFSR)
+     * @param orderNumbers order numbers of taps
+     */
     public LFSR(int length, int... orderNumbers) {
         this.length = length;
         engagedElements = new ArrayList<>();
@@ -24,6 +29,10 @@ public class LFSR extends BitGenerator {
         setInitialStateRandomly();
     }
 
+    /**
+     * Set a list of LFSR's taps.
+     * @param orderNumbers order numbers of taps
+     */
     private void setEngagedElements(int... orderNumbers) {
         for (int orderNumber : orderNumbers) {
             engagedElements.add(orderNumber);

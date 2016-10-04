@@ -11,8 +11,8 @@ public class LehmerLow extends LehmerGenerator {
     }
 
     /**
-     * Generate random numbers and then get only 8 LSBs (the least significant bits) of every number
-     * and add them to <code>generatedRandomNumbers</code> list.
+     * Generates random numbers and then gets only 8 LSBs (the least significant bits) of every number
+     * and adds them to <code>generatedRandomNumbers</code> list.
      * @param quantity number of random values that have to be generated
      */
     @Override

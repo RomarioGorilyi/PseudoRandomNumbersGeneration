@@ -9,8 +9,11 @@ public abstract class BitGenerator extends Generator {
         return generateByte();
     }
 
-    public abstract long generateRandomBit();
-
+    /**
+     * Generates 8 random bits consistently and afterwards converts them into a byte
+     * disposing each i-th bit at i-th position starting from the LSB (lest significant bit) of the result byte.
+     * @return a byte representation of 8 bits
+     */
     public long generateByte() {
         long result = 0;
         for (int i = 0; i < 8; i++) {
@@ -19,4 +22,6 @@ public abstract class BitGenerator extends Generator {
 
         return result;
     }
+
+    public abstract long generateRandomBit();
 }

@@ -3,6 +3,7 @@ package main.java.kpi.ipt.crypt.lab1.generators.bbs;
 import java.math.BigInteger;
 
 /**
+ * Byte realization of Blum-Blum-Shub generator.
  * Created by Roman Horilyi on 27.09.2016.
  */
 public class BBSBytesGenerator extends BBSGenerator {

@@ -19,7 +19,7 @@ public abstract class Generator {
     public abstract long generateRandomNumber();
 
     /**
-     * Generate certain number of random values and add them to the <code>generatedRandomNumbers</code> arrayList.
+     * Generates a specified number of random values and adds them to the <code>generatedRandomNumbers</code> arrayList.
      * @param quantity number of random values that have to be generated
      */
     public void generateRandomNumbers(int quantity) {
@@ -29,7 +29,7 @@ public abstract class Generator {
     }
 
     /**
-     * Add a random number to the <code>generatedRandomNumbers</code> arrayList.
+     * Adds the specified random number to the <code>generatedRandomNumbers</code> arrayList.
      * @param randomNumber random number that is added to the list
      */
     public void addToGeneratedRandomNumbers(long randomNumber) {
