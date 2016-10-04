@@ -11,7 +11,13 @@ public class BMBytesGenerator extends BMGenerator {
     }
 
     @Override
-    public long generateRandomBit() {
+    public long generateRandomBit() {   // This method isn't intended to be called,
+                                        // because we generate a random byte number at once.
+       return 0;
+    }
+
+    @Override
+    public long generateByte() {
         BigInteger result = (getT().multiply(new BigInteger("256")))
                 .divide(getP().subtract(new BigInteger("1")));
         setT();

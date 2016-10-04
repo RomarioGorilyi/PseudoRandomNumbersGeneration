@@ -6,12 +6,12 @@ package main.java.kpi.ipt.crypt.lab1.generators;
 public abstract class BitGenerator extends Generator {
     @Override
     public long generateRandomNumber() {
-        return generateByteFromRandomBits();
+        return generateByte();
     }
 
     public abstract long generateRandomBit();
 
-    public long generateByteFromRandomBits() {
+    public long generateByte() {
         long result = 0;
         for (int i = 0; i < 8; i++) {
             result ^= (generateRandomBit() << i);
