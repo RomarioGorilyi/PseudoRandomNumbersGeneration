@@ -24,6 +24,7 @@ public abstract class Generator {
      * @param quantity number of random values that have to be generated
      */
     public void generateRandomNumbers(int quantity) {
+        generatedRandomNumbers = new ArrayList<>(quantity);
         for (int i = 0; i < quantity; i++) {
             addToGeneratedRandomNumbers(generateRandomNumber());
         }

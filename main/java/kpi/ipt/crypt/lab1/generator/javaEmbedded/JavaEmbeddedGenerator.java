@@ -3,6 +3,7 @@ package main.java.kpi.ipt.crypt.lab1.generator.javaEmbedded;
 import main.java.kpi.ipt.crypt.lab1.generator.StreamingGenerator;
 
 import java.security.SecureRandom;
+import java.util.ArrayList;
 
 /**
  * Created by Roman Horilyi on 13.09.2016.
@@ -10,6 +11,8 @@ import java.security.SecureRandom;
 public class JavaEmbeddedGenerator extends StreamingGenerator {
     @Override
     public void generateRandomNumbers(int quantity) {
+        setGeneratedRandomNumbers(new ArrayList<>(quantity));
+
         SecureRandom secureRandom = new SecureRandom();
         byte[] generatedRandomNumbers = new byte[quantity];
         secureRandom.nextBytes(generatedRandomNumbers);

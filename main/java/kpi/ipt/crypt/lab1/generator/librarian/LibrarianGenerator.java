@@ -43,6 +43,8 @@ public class LibrarianGenerator extends StreamingGenerator {
 
     @Override
     public void generateRandomNumbers(int quantity) {
+        setGeneratedRandomNumbers(new ArrayList<>(quantity));
+
         ArrayList<Integer> randoms = convertTextIntoBytes();
         int counter = 0;
         for (int random : randoms) {
