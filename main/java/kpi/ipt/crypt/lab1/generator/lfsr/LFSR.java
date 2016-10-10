@@ -1,11 +1,12 @@
-package main.java.kpi.ipt.crypt.lab1.generators.lfsr;
+package main.java.kpi.ipt.crypt.lab1.generator.lfsr;
 
-import main.java.kpi.ipt.crypt.lab1.generators.BitGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.BitGenerator;
 
 import java.util.*;
 
 /**
  * Linear feedback shift register.
+ *
  * Created by Roman Horilyi on 26.09.2016.
  */
 public class LFSR extends BitGenerator {
@@ -16,6 +17,7 @@ public class LFSR extends BitGenerator {
 
     /**
      * Constructs a new LFSR with the specified length and the specified set of taps (states that influence the input).
+     *
      * @param length length of the LFSR (number of bits in the LFSR)
      * @param orderNumbers order numbers of taps
      */
@@ -31,6 +33,7 @@ public class LFSR extends BitGenerator {
 
     /**
      * Set a list of LFSR's taps.
+     *
      * @param orderNumbers order numbers of taps
      */
     private void setEngagedElements(int... orderNumbers) {

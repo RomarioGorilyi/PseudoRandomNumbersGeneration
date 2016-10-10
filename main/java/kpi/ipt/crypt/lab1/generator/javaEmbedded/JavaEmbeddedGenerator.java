@@ -1,6 +1,6 @@
-package main.java.kpi.ipt.crypt.lab1.generators.javaEmbedded;
+package main.java.kpi.ipt.crypt.lab1.generator.javaEmbedded;
 
-import main.java.kpi.ipt.crypt.lab1.generators.StreamingGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.StreamingGenerator;
 
 import java.security.SecureRandom;
 

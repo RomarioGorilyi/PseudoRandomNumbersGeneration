@@ -1,6 +1,6 @@
-package main.java.kpi.ipt.crypt.lab1.generators.librarian;
+package main.java.kpi.ipt.crypt.lab1.generator.librarian;
 
-import main.java.kpi.ipt.crypt.lab1.generators.StreamingGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.StreamingGenerator;
 
 import java.io.IOException;
 import java.io.InputStream;

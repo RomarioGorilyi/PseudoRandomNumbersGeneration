@@ -1,7 +1,7 @@
-package main.java.kpi.ipt.crypt.lab1.generators.geffe;
+package main.java.kpi.ipt.crypt.lab1.generator.geffe;
 
-import main.java.kpi.ipt.crypt.lab1.generators.BitGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.lfsr.LFSR;
+import main.java.kpi.ipt.crypt.lab1.generator.BitGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.lfsr.LFSR;
 
 /**
  * Created by Roman Horilyi on 26.09.2016.

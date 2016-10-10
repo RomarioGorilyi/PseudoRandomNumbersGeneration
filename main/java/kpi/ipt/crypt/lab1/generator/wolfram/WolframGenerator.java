@@ -1,6 +1,6 @@
-package main.java.kpi.ipt.crypt.lab1.generators.wolfram;
+package main.java.kpi.ipt.crypt.lab1.generator.wolfram;
 
-import main.java.kpi.ipt.crypt.lab1.generators.BitGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.BitGenerator;
 
 import java.security.SecureRandom;
 
@@ -30,15 +30,11 @@ public class WolframGenerator extends BitGenerator {
 
     private long rotateBitsOfIntegerLeftwards(long number) {
         long rightmostBit = (number >> 31) & 1;
-        long result = (number << 1) | rightmostBit;
-
-        return result;
+        return (number << 1) | rightmostBit;
     }
 
     private long rotateBitsOfIntegerRightwards(long number) {
         long leftmostBit = (number & 1) << 31;
-        long result = leftmostBit | (number >> 1);
-
-        return result;
+        return leftmostBit | (number >> 1);
     }
 }

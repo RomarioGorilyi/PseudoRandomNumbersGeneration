@@ -1,6 +1,6 @@
-package main.java.kpi.ipt.crypt.lab1.generators.lehmer;
+package main.java.kpi.ipt.crypt.lab1.generator.lehmer;
 
-import main.java.kpi.ipt.crypt.lab1.generators.ByteGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.ByteGenerator;
 
 /**
  * Created by Roman Horilyi on 25.09.2016.

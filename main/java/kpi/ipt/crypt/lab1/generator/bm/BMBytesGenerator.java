@@ -1,9 +1,10 @@
-package main.java.kpi.ipt.crypt.lab1.generators.bm;
+package main.java.kpi.ipt.crypt.lab1.generator.bm;
 
 import java.math.BigInteger;
 
 /**
  * Byte realization of Blum-Micali generator.
+ *
  * Created by Roman Horilyi on 27.09.2016.
  */
 public class BMBytesGenerator extends BMGenerator {

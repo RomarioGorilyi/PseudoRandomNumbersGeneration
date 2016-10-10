@@ -1,4 +1,4 @@
-package main.java.kpi.ipt.crypt.lab1.generators;
+package main.java.kpi.ipt.crypt.lab1.generator;
 
 /**
  * Created by Roman Horilyi on 02.10.2016.

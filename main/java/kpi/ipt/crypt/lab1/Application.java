@@ -1,17 +1,17 @@
 package main.java.kpi.ipt.crypt.lab1;
 
-import main.java.kpi.ipt.crypt.lab1.generators.bbs.BBSBytesGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.bbs.BBSGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.bm.BMBytesGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.bm.BMGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.geffe.GeffeGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.javaEmbedded.JavaEmbeddedGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.lfsr.L20;
-import main.java.kpi.ipt.crypt.lab1.generators.lfsr.L89;
-import main.java.kpi.ipt.crypt.lab1.generators.lehmer.LehmerHigh;
-import main.java.kpi.ipt.crypt.lab1.generators.lehmer.LehmerLow;
-import main.java.kpi.ipt.crypt.lab1.generators.librarian.LibrarianGenerator;
-import main.java.kpi.ipt.crypt.lab1.generators.wolfram.WolframGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.bbs.BBSBytesGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.bbs.BBSGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.bm.BMBytesGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.bm.BMGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.geffe.GeffeGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.javaEmbedded.JavaEmbeddedGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.lfsr.L20;
+import main.java.kpi.ipt.crypt.lab1.generator.lfsr.L89;
+import main.java.kpi.ipt.crypt.lab1.generator.lehmer.LehmerHigh;
+import main.java.kpi.ipt.crypt.lab1.generator.lehmer.LehmerLow;
+import main.java.kpi.ipt.crypt.lab1.generator.librarian.LibrarianGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.wolfram.WolframGenerator;
 
 import java.math.BigInteger;
 

@@ -1,12 +1,13 @@
-package main.java.kpi.ipt.crypt.lab1.generators.bbs;
+package main.java.kpi.ipt.crypt.lab1.generator.bbs;
 
-import main.java.kpi.ipt.crypt.lab1.generators.BitGenerator;
+import main.java.kpi.ipt.crypt.lab1.generator.BitGenerator;
 
 import java.math.BigInteger;
 import java.util.Random;
 
 /**
  * Blum-Blum-Shub generator.
+ *
  * Created by Roman Horilyi on 27.09.2016.
  */
 public class BBSGenerator extends BitGenerator {

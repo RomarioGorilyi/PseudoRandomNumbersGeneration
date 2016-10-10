@@ -1,4 +1,4 @@
-package main.java.kpi.ipt.crypt.lab1.generators;
+package main.java.kpi.ipt.crypt.lab1.generator;
 
 /**
  * Created by Roman Horilyi on 02.10.2016.
@@ -12,6 +12,7 @@ public abstract class BitGenerator extends Generator {
     /**
      * Generates 8 random bits consistently and afterwards converts them into a byte
      * disposing each i-th bit at i-th position starting from the LSB (lest significant bit) of the result byte.
+     *
      * @return a byte representation of 8 bits
      */
     public long generateByte() {

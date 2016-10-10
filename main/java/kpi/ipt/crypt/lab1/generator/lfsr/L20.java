@@ -1,4 +1,4 @@
-package main.java.kpi.ipt.crypt.lab1.generators.lfsr;
+package main.java.kpi.ipt.crypt.lab1.generator.lfsr;
 
 /**
  * Created by Roman Horilyi on 26.09.2016.

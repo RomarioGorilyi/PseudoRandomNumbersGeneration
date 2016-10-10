@@ -1,4 +1,4 @@
-package main.java.kpi.ipt.crypt.lab1.generators;
+package main.java.kpi.ipt.crypt.lab1.generator;
 
 import java.util.ArrayList;
 
@@ -20,6 +20,7 @@ public abstract class Generator {
 
     /**
      * Generates a specified number of random values and adds them to the <code>generatedRandomNumbers</code> arrayList.
+     *
      * @param quantity number of random values that have to be generated
      */
     public void generateRandomNumbers(int quantity) {
@@ -30,6 +31,7 @@ public abstract class Generator {
 
     /**
      * Adds the specified random number to the <code>generatedRandomNumbers</code> arrayList.
+     *
      * @param randomNumber random number that is added to the list
      */
     public void addToGeneratedRandomNumbers(long randomNumber) {
