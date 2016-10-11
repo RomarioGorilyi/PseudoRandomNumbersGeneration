@@ -16,20 +16,19 @@ public class EqualProbabilityTest extends Test {
 
     @Override
     public double calculateStatistics(List<Long> generatedNumbers) {
-        Map<Long, Integer> bytesFrequency = new HashMap<>();
+        Map<Integer, Integer> frequenciesOfBytes = new HashMap<>();
         for (int i = 0; i < 256; i++) {
-            bytesFrequency.put((long) i, 0);
+            frequenciesOfBytes.put(i, 0);
         }
-
         for (long number : generatedNumbers) {
-            bytesFrequency.put(number, bytesFrequency.get(number) + 1);
+            frequenciesOfBytes.put((int) number, frequenciesOfBytes.get((int) number) + 1);
         }
 
         double result = 0;
         double expectedNumberOfEveryByte = generatedNumbers.size() / 256;
         for (int i = 0; i < 256; i++) {
-            result += (bytesFrequency.get((long) i) - expectedNumberOfEveryByte)
-                    * (bytesFrequency.get((long) i) - expectedNumberOfEveryByte)
+            result += (frequenciesOfBytes.get(i) - expectedNumberOfEveryByte)
+                    * (frequenciesOfBytes.get(i) - expectedNumberOfEveryByte)
                     / expectedNumberOfEveryByte;
         }
 

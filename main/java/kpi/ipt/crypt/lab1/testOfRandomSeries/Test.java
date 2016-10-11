@@ -3,6 +3,7 @@ package main.java.kpi.ipt.crypt.lab1.testOfRandomSeries;
 import main.java.kpi.ipt.crypt.lab1.generator.Generator;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -15,25 +16,30 @@ public abstract class Test {
     private static final int NUMBER_OF_GENERATED_RANDOM_NUMBERS = 1_000_000;
 
     private int L;
+    private double statistics;
 
     public Test(int L) {
         this.L = L;
     }
 
-    public int getL() {
-        return L;
+    public double getStatistics() {
+        return statistics;
+    }
+
+    public void setStatistics(double statistics) {
+        this.statistics = statistics;
     }
 
     /**
      * Tests whether the specified sequence of numbers corresponds to a specific requirement of random numbers.
      *
-     * @param list sequence of numbers
+     * @param statistics statistics of number sequence
      * @param quantile value of a quantile that can be found in materials devoted to mathematical statistics and theory
      *                 of probability
      * @return <code>true</code> whether the specified numbers are random
      */
-    public boolean test(List<Long> list, double quantile) {
-        return calculateStatistics(list) <= calculateLimit(quantile);
+    public boolean test(double statistics, double quantile) {
+        return statistics <= calculateLimit(quantile);
     }
 
     /**
@@ -44,13 +50,23 @@ public abstract class Test {
     public void testGenerator(Generator generator) {
         generator.generateRandomNumbers(NUMBER_OF_GENERATED_RANDOM_NUMBERS);
         ArrayList<Long> randomNumbers = generator.getGeneratedRandomNumbers();
+        // TODO refactor generatedRandomNumbers from Long to Integer
+        // TODO refactor LehmerGenerator
 
         System.out.println("Tests for " + generator.getClass().getSimpleName() + ":");
-        System.out.println("alpha = 0.01: " + test(randomNumbers, QUANTILE_0_99));
-        System.out.println("alpha = 0.05: " + test(randomNumbers, QUANTILE_0_95));
-        System.out.println("alpha = 0.1: " + test(randomNumbers, QUANTILE_0_9) + "\n");
+        double statistics = calculateStatistics(randomNumbers);
+        System.out.println("Statistics: " + statistics);
+        System.out.println("alpha = 0.01: " + test(statistics, QUANTILE_0_99));
+        System.out.println("alpha = 0.05: " + test(statistics, QUANTILE_0_95));
+        System.out.println("alpha = 0.1: " + test(statistics, QUANTILE_0_9) + "\n");
     }
 
+    /**
+     * Calculates statistics of the specified list of numbers.
+     *
+     * @param list list of numbers
+     * @return statistics of the specified list
+     */
     public abstract double calculateStatistics(List<Long> list);
 
     /**
