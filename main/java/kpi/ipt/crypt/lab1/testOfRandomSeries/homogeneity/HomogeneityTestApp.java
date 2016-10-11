@@ -1,4 +1,4 @@
-package main.java.kpi.ipt.crypt.lab1.testOfRandomSeries.charIndependence;
+package main.java.kpi.ipt.crypt.lab1.testOfRandomSeries.homogeneity;
 
 import main.java.kpi.ipt.crypt.lab1.generator.bbs.BBSBytesGenerator;
 import main.java.kpi.ipt.crypt.lab1.generator.bbs.BBSGenerator;
@@ -18,9 +18,9 @@ import java.math.BigInteger;
 /**
  * Created by Roman Horilyi on 11.10.2016.
  */
-public class CharIndependenceTestApp {
+public class HomogeneityTestApp {
     public static void main(String[] args) {
-        CharIndependenceTest test = new CharIndependenceTest();
+        HomogeneityTest test = new HomogeneityTest(25);
 
         test.testGenerator(new JavaEmbeddedGenerator());
 

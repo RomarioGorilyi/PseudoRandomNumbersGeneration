@@ -27,9 +27,6 @@ public class CharIndependenceTest extends Test{
             double sumByFirstByte = 0;
             for (int j = 0; j < 256; j++) {
                 if ((frequencyOfPairs.get(i + j * 256) != 0) && (frequencyOfSecondBytes.get(j) != 0)) {
-                    /*System.out.println(frequencyOfPairs.get(i + j * 256) * frequencyOfPairs.get(i + j * 256));
-                    System.out.println(frequencyOfSecondBytes.get(j));
-                    System.out.println((double) (frequencyOfPairs.get(i + j * 256) * frequencyOfPairs.get(i + j * 256)) / frequencyOfSecondBytes.get(j));*/
                     sumByFirstByte += (double) (frequencyOfPairs.get(i + j * 256) * frequencyOfPairs.get(i + j * 256))
                             / frequencyOfSecondBytes.get(j);
                 }
